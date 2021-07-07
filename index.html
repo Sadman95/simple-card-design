@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <title>Card</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Amaranth', sans-serif;
+            background-color: #F0F2F5;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        body::before {
+            content: " ";
+            height: 60px;
+            width: 43%;
+            position: absolute;
+            background-color: orangered;
+            left: 0;
+            top: 15px;
+            clip-path: polygon(0% 0%, 95% 0, 100% 50%, 95% 100%, 0% 100%);
+        }
+
+        body::after {
+            content: " ";
+            height: 60px;
+            width: 43%;
+            position: absolute;
+            background-color: orangered;
+            right: 0;
+            top: 15px;
+            clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 5% 100%, 0% 50%);
+        }
+
+        .main {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .card-col {
+            border: 2px solid honeydew;
+            padding: 32px 22px;
+            margin: 0 8px;
+            border-radius: 8px;
+            box-shadow: 0px 3px 8px 0px gray;
+            transition: all 0.3s linear;
+            position: relative;
+            background-color: #fff;
+        }
+
+        img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            border: 5px dotted transparent;
+            padding: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 0px 3px 0px dimgrey;
+        }
+
+        .card-col p:nth-child(4) {
+            font-size: 18px;
+            color: cadetblue;
+        }
+
+        .card-col p:nth-child(5) {
+            text-align: justify;
+            padding: 10px 23px;
+            border: 1px dashed navy;
+            margin-bottom: 24px;
+            border-radius: 5px;
+            color: rgb(92, 79, 79)
+        }
+
+        span {
+            padding: 0px 80px;
+        }
+
+        a {
+            text-decoration: none;
+            color: crimson;
+            border: 1px solid crimson;
+            padding: 12px 30px;
+            border-radius: 40px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        a:hover {
+            background: linear-gradient(90deg, rgba(154, 10, 237, 0.7791491596638656) 0%, rgba(255, 3, 3, 1) 100%);
+            color: lavenderblush;
+            border: 1px solid;
+        }
+
+        .over {
+            position: absolute;
+            height: 50px;
+            padding: 0px 18px;
+            background-color: lightblue;
+            left: -2px;
+            top: -2px;
+            clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+            transition: all 0.1s linear;
+            transform: translateX(-50%);
+            visibility: hidden;
+        }
+
+        .over h2 {
+            font-weight: 400;
+            color: navy;
+            margin-top: 10px;
+        }
+
+        .card-col:hover {
+            border: 2px solid skyblue;
+            box-shadow: none;
+        }
+
+        .card-col:hover .over {
+            visibility: visible;
+            transform: translateX(0%);
+        }
+
+        .card-col:hover img {
+            transform: translateY(12px);
+            border: 5px dotted magenta;
+            box-shadow: none;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .main {
+                flex-direction: column;
+            }
+
+            .card-col {
+                margin-bottom: 32px;
+            }
+
+            body::before,
+            body::after {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hover Card</h1>
+    <div class="main">
+        <div class="card-col">
+            <div class="over">
+                <h2>Partener- 01</h2>
+            </div>
+            <img src="images/jenifer-lawrence.jpg" alt="">
+            <h2>Jennifer Lawrence</h2>
+            <p>Managing Director</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore numquam ab incidunt voluptas
+                recusandae mollitia eius cum, nisi odit consequuntur veniam enim, repudiandae tempora quasi temporibus.
+                Fugiat, perferendis deleniti! A eaque qui quo ab reiciendis optio dicta et vitae fugiat tenetur,
+                aliquam, voluptatibus repudiandae <span>quaerat velit, natus.</span></p>
+            <a href="#">Know More</a>
+        </div>
+        <div class="card-col">
+            <div class="over">
+                <h2>Partener- 02</h2>
+            </div>
+            <img src="images/emma-watson.jpg" alt="">
+            <h2>Emma Watson</h2>
+            <p>CEO</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore numquam ab incidunt voluptas
+                recusandae mollitia eius cum, nisi odit consequuntur veniam enim, repudiandae tempora quasi temporibus.
+                Fugiat, perferendis deleniti! A eaque qui quo ab reiciendis optio dicta et vitae fugiat tenetur,
+                aliquam, voluptatibus repudiandae <span>quaerat velit, natus.</span></p>
+            <a href="#">Know More</a>
+        </div>
+        <div class="card-col">
+            <div class="over">
+                <h2>Partener- 03</h2>
+            </div>
+            <img src="images/kate-winslet.jpg" alt="">
+            <h2>Kate Winslet</h2>
+            <p>Digital Marketer</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore numquam ab incidunt voluptas
+                recusandae mollitia eius cum, nisi odit consequuntur veniam enim, repudiandae tempora quasi temporibus.
+                Fugiat, perferendis deleniti! A eaque qui quo ab reiciendis optio dicta et vitae fugiat tenetur,
+                aliquam, voluptatibus repudiandae <span>quaerat velit, natus.</span></p>
+            <a href="#">Know More</a>
+        </div>
+    </div>
+</body>
+
+</html>
